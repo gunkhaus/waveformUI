@@ -1,0 +1,375 @@
+@font-face {
+    font-family: "helvetica";
+    src: local("Helvetica"), url("./Helvetica.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "helvetica-bold";
+    src: local("Helvetica-Bold"), url("./Helvetica-Bold.ttf") format("truetype");
+  }
+  
+  body{
+    background-color: #1c1c1c
+  }
+
+#searchBar {
+  text-align: left;
+}
+
+.coverArtImage {
+  border-radius: 6px; /* optional: adds rounded corners */
+  height: 50px;
+  margin-right: 10px;
+  width: 50px;
+}
+
+.contentBox {
+  background-color: #212121;
+  border-radius: 15px;
+  color: white;
+  font-family: "helvetica-bold";
+  height: 20px;
+  margin-left: 10px;
+  padding: 0px;
+  resize: none;
+  text-align: center;
+  width: 85%;
+}
+
+.contentflexbox {
+  display: flex; /* Align sideBoxes and songScroll horizontally */
+  flex: 1;
+  margin-top: 20px;
+}
+
+.dropdownOptions {
+  box-shadow: 0px 5px rebeccapurple;
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  gap: 10px;
+  left: 0;
+  margin-left: 70px;
+  margin-top: -21px;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+
+.entirePageContainer {
+  align-items: flex-start; /* Align items to the top */
+  display: flex;  /* This makes the entire page a flex container */
+  height: 100%;  /* Take full viewport height */
+  justify-content: center; /* Center content horizontally */
+  padding: 20px;
+}
+
+.headers {
+  align-items: center;      /* Vertically center items */
+  display: flex;
+  gap: 20px;                /* Space between logo, wave, and sort */
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.headers canvas {
+  /* Optional: constrain height */
+}
+
+h1 {
+  color: white;
+  font-family: helvetica-bold;
+  letter-spacing: -2px;
+  margin-left: 10px;
+}
+
+h2 {
+  background-color: #1c1c1c;
+  border: 2px solid rebeccapurple;
+  border-radius: 15px;
+  box-shadow: 0px 5px rebeccapurple;
+  color: white;
+  font-family: helvetica-bold;
+  font-size: 30px;
+  letter-spacing: -2px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+  font-family: helvetica-bold;
+  font-size: 18px;
+  letter-spacing: -2px;
+  margin-left: 25px;
+}
+
+.nextButton {
+  background-color: #212121;
+  border: none;
+  border-radius: 15px;
+  bottom: 10px;
+  color: white;
+  font-family: helvetica-bold;
+  font-size: 18px;
+  height: 50px;
+  left: 166.25px;
+  letter-spacing: -1.5px;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s;
+  width: 62.5px;
+}
+
+.nextButton:hover,
+.previousButton:hover {
+  color: rebeccapurple;
+}
+
+.optionButton {
+  background-color: #1c1c1c;
+  border: 1px solid #212121;
+  border-radius: 15px;
+  color: white;
+  font-family: helvetica-bold;
+  font-size: 18px;
+  height: 40px;
+  letter-spacing: -1.5px;
+  text-align: left;
+  transition: 0.3s;
+  width: 250px;
+}
+
+.optionButton:hover {
+  background-color: rebeccapurple;
+}
+
+.options {
+  border: 3px solid #1c1c1c;
+  border-radius: 15px;
+  height: 200px;
+  margin: 5px;
+  width: 250px;
+}
+
+.playButton {
+  background-color: rebeccapurple;
+  border: 1px solid #212121;
+  border-radius: 15px;
+  bottom: 10px;
+  color: white;
+  font-family: helvetica-bold;
+  font-size: 18px;
+  height: 50px;
+  left: 93.75px;
+  letter-spacing: -1.5px;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s;
+  width: 62.5px;
+}
+
+.playButton:hover {
+  background-color: #1c1c1c;
+  color: rebeccapurple;
+}
+
+.playingCurrently {
+  border: 3px solid #1c1c1c;
+  border-radius: 15px;
+  height: 300px;
+  margin: 5px;
+  position: relative;
+  width: 250px;
+}
+
+.previousButton {
+  background-color: #212121;
+  border: none;
+  border-radius: 15px;
+  bottom: 10px;
+  color: white;
+  font-family: helvetica-bold;
+  font-size: 18px;
+  height: 50px;
+  left: 21.25px;
+  letter-spacing: -1.5px;
+  position: absolute;
+  text-align: center;
+  transition: 0.3s;
+  width: 62.5px;
+}
+
+.secondaryPageContainer {
+  background-color: #212121;
+  border-radius: 15px;
+  display: flex; 
+  flex-direction: column;  
+  height: 100%;
+  margin: 15px;
+  padding: 10px;
+  width: 100%;
+}
+
+select {
+  display: flex;
+  flex-direction: column;
+}
+
+.songScroll {
+  border: 3px solid #1c1c1c;
+  border-radius: 15px;
+  height: 510px;
+  margin: 5px;
+  overflow-y: auto;
+  width: 100%;
+  overflow-y:scroll;
+}
+.songScroll::-webkit-scrollbar-thumb{
+  background-color: rebeccapurple;
+  border-radius: 15px;
+  height: 10px;
+}
+.songScroll::-webkit-scrollbar{
+  scrollbar-width: thin;
+  border-radius: 15px;
+  width: 5px;
+}
+.songScroll::-webkit-scrollbar-track{
+   background: transparent;
+}
+.songScroll::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 15px; 
+}
+
+.songScroll::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 15px;
+}
+
+.songScrollButtons {
+  align-items: center;
+  background-color: #1c1c1c;
+  border: 2px solid rebeccapurple;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-family: helvetica;
+  height: 80px;
+  letter-spacing: -1px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  text-align: left;
+  transition-duration: 0.4s;
+  width: 100%;
+}
+
+.songScrollButtons.active {
+  background-color: #2e1745; 
+}
+
+.songScrollButtons.clicked {
+  background-color: white;
+}
+
+.songScrollButtons:hover {
+  box-shadow: 0px 5px rebeccapurple;
+  color: rebeccapurple;
+}
+
+.songScrollContainer {
+  color: white;
+  font-size: 18px;
+  list-style-type: none;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+
+.songTitle {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.sortByArrow {
+  background: #212121;
+  border-radius: 15px;
+  color: rebeccapurple;
+  font-family: helvetica-bold;
+  margin: 0px;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.sortByButton {
+  background: #212121;
+  border-radius: 15px;
+  color: white;
+  font-family: helvetica-bold;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.sortByButton:hover {
+  color: rebeccapurple;
+}
+
+.sortByDropdown {
+  margin-left: 10px;
+  position: relative; 
+}
+
+.sortByDropdown.open .dropdownOptions {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sortByMainButton {
+  background: #212121;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  font-family: helvetica-bold;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.sortByMainButton:hover {
+  background-color: rebeccapurple;
+}
+
+.title {
+  position: static;
+}
+
+
+:root {
+  --background-color: #f6f6f6;
+  --foreground-color: #003cff;
+  --primary-text-color: #0a0a0a;
+  --secondary-text-color: #ffffff;
+  --toggle-bg: #f0eb9d;
+  --toggle-fg: #ffd000;
+}
+
+[data-theme="dark"] {
+  --background-color: #0a0a0a;
+  --foreground-color: #567aff;
+  --primary-text-color: #f6f6f6;
+  --secondary-text-color: #0a0a0a;
+  --toggle-bg: #283452;
+  --toggle-fg: #00a6ff;
+}
